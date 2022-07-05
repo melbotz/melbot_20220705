@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20220705</title>
+    <link rel="stylesheet" href="./css/spux.css" />
+    <script type="application/json" id="data">
+      {
+        "@id": "",
+        "birth": "2022-07-03 21:57:52",
+        "energy": 99850,
+        "address": "bWm6cLvn6VHPiXecBRmsNoEnuUMpkV6gQW",
+        "gitmark": {
+          "@id": "gitmark:03cbc85cec0e8f19376bc3ff5afddf347d635b78cec7f3cae4ab84d4ddf9140b:0",
+          "genesis": "gitmark:03cbc85cec0e8f19376bc3ff5afddf347d635b78cec7f3cae4ab84d4ddf9140b:0",
+          "nick": "melbot_20220705",
+          "package": "./package.json",
+          "repository": "./"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import { render, html } from 'https://cdn.skypack.dev/spux'
+      import 'https://cdn.skypack.dev/dior'
+
+      render(
+        html`
+          <h4>${di.data.gitmark['nick']}</h4>
+
+          <img
+            src="https://robohash.org/gitmark:03cbc85cec0e8f19376bc3ff5afddf347d635b78cec7f3cae4ab84d4ddf9140b:0"
+          />
+
+          <pre>
+
+            Name: ${di.data.gitmark['nick'] + '\n'}
+            Birth: ${di.data.birth} ${'\n'}
+            Energy: ${di.data.energy} Marks ${'\n'}
+            Address: <a href="https://chainz.cryptoid.info/marks/address.dws?${di
+            .data.address}.htm" target="_blank">${di.data.address}</a>
+
+
+    </pre>
+          <h4>Activity</h4>
+          <pre>
+<a
+            href="https://gitmark.info/${di.data.gitmark['@id'].split(':')[1]}"
+            target="_blank"
+            >Genesis</a
+          >        
+            </pre>
+
+          <a
+            href="https://gitmark.info/${di.data.gitmark['@id'].split(':')[1]}"
+            target="_blank"
+            >${di.data.gitmark['@id']}</a
+          >
+        `,
+        document.body
+      )
+
+      console.log(di.data)
+    </script>
+  </head>
+  <body></body>
+</html>
