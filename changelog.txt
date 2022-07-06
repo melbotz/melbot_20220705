@@ -1,6 +1,7 @@
 20220705
 exodus
 bookmarks
+write to gitlab
 
 20220704
 new bot
